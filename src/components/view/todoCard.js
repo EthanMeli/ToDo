@@ -10,12 +10,20 @@ export function createTodoCard(todoItem) {
   const priority = document.createElement("span");
   priority.textContent = todoItem.priority;
 
+  const header = document.createElement("div");
+  header.appendChild(title);
+  header.appendChild(priority);
+
   const description = document.createElement("p");
   description.textContent = todoItem.description;
 
   const dueDate = document.createElement("div");
   const formattedDueDate = format(todoItem.dueDate, "MMM d, yyyy");
-  dueDate.textContent = formattedDueDate;
+  dueDate.textContent = `Due: ${formattedDueDate}`;
+
+  const body = document.createElement("div");
+  body.appendChild(description);
+  body.appendChild(dueDate);
 
   const deleteButton = document.createElement("button");
   deleteButton.textContent = "Delete";
@@ -23,12 +31,13 @@ export function createTodoCard(todoItem) {
   const editButton = document.createElement("button");
   editButton.textContent = "Edit";
 
-  todoCard.appendChild(title);
-  todoCard.appendChild(priority);
-  todoCard.appendChild(description);
-  todoCard.appendChild(dueDate);
-  todoCard.appendChild(deleteButton);
-  todoCard.appendChild(editButton);
+  const footer = document.createElement("div");
+  footer.appendChild(deleteButton);
+  footer.appendChild(editButton);
+
+  todoCard.appendChild(header);
+  todoCard.appendChild(body);
+  todoCard.appendChild(footer);
 
   return todoCard;
 }

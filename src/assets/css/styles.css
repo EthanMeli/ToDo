@@ -1,9 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
 *,
 *::after,
 *::before {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+body {
+  font-family: "Google Sans", Arial, sans-serif;
 }
 
 body > div {
@@ -21,6 +27,35 @@ nav {
   background-color: yellow;
 }
 
-.items {
+.items-container {
   background-color: blue;
+  padding: 2rem;
+}
+
+.items-container > h2 {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.todoCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgb(183, 178, 178);
+  min-height: 200px;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.todoCard > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(211, 211, 211, 0.516);
 }
