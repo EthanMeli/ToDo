@@ -27,6 +27,7 @@ export function createTodoCard(todoItem) {
 
   const deleteButton = document.createElement("button");
   deleteButton.textContent = "Delete";
+  todoItem.deleteButton = deleteButton;
 
   const editButton = document.createElement("button");
   editButton.textContent = "Edit";
